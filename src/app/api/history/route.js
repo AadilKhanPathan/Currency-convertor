@@ -1,6 +1,5 @@
 // FIRST API
 
-export const dynamic = 'force-static'; // <--- ADD THIS LINE AT THE TOP
 
 export async function GET(request) {
   try {
