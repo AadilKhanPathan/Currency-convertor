@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* Enables static HTML export for GitHub Pages */
   output: 'export',
+  
+  // Set your GitHub repository name here
+  basePath: process.env.NODE_ENV === 'production' ? '/Currency-converter' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Currency-converter/' : '',
 
-  /* Required for GitHub Pages (disables Node.js server image optimization) */
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -13,8 +15,6 @@ const nextConfig = {
       },
     ],
   },
-
-  /* Kept your React Compiler option */
   reactCompiler: true,
 };
 
