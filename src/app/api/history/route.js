@@ -1,6 +1,32 @@
-// FIRST API
+// FRANKURTER API
+
+// export async function GET(request) {
+//   const { searchParams } = new URL(request.url);
+
+//   const from = searchParams.get("from");
+//   const to = searchParams.get("to");
+//   const start = searchParams.get("start");
+//   const end = searchParams.get("end");
+
+//   const res = await fetch(
+//     `https://api.frankfurter.app/${start}..${end}?from=${from}&to=${to}`
+//   );
+
+//   if (!res.ok) {
+//     return Response.json(
+//       { error: "Failed to fetch exchange rates" },
+//       { status: res.status }
+//     );
+//   }
+
+//   const data = await res.json();
+
+//   return Response.json(data);
+// }
 
 
+
+// EXCHANGERATE HOST API
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -28,28 +54,3 @@ export async function GET(request) {
 }
 
 
-// SECOND API
-
-// export async function GET(request) {
-//   const { searchParams } = new URL(request.url);
-
-//   const from = searchParams.get("from");
-//   const to = searchParams.get("to");
-//   const start = searchParams.get("start");
-//   const end = searchParams.get("end");
-
-//   const res = await fetch(
-//     `https://api.frankfurter.app/${start}..${end}?from=${from}&to=${to}`
-//   );
-
-//   if (!res.ok) {
-//     return Response.json(
-//       { error: "Failed to fetch exchange rates" },
-//       { status: res.status }
-//     );
-//   }
-
-//   const data = await res.json();
-
-//   return Response.json(data);
-// }

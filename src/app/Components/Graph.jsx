@@ -80,7 +80,6 @@ function ChartLineLinear({ From, To }) {
 
         console.log("fetching api");
 
-
         // FIRST API
         // const res = await fetch(
         //   `/api/history?from=${From}&to=${To}&start=${start}&end=${end}`,
@@ -93,7 +92,6 @@ function ChartLineLinear({ From, To }) {
         //   rate: rates[To],
         // }));
 
-
         // SECOND API
         const res = await fetch(
           `/api/history?from=${From}&to=${To}&start=${start}&end=${end}`,
@@ -102,6 +100,11 @@ function ChartLineLinear({ From, To }) {
         const data = await res.json();
 
         const pair = `${From}${To}`;
+
+        if (!data.quotes) {
+          console.error("Unexpected API response:", data);
+          return;
+        }
 
         const formatted = Object.entries(data.quotes).map(([date, quotes]) => ({
           date,
@@ -142,13 +145,13 @@ function ChartLineLinear({ From, To }) {
         <CardTitle>{`${From} to ${To} - Exchange Rate`}</CardTitle>
         <div className="flex justify-between">
           <CardDescription
-            className={ cn( "flex mt-1.5 gap-1",
-              stats.increased ? "text-green-600" : "text-red-600"
-  )}
+            className={cn(
+              "flex mt-1.5 gap-1",
+              stats.increased ? "text-green-600" : "text-red-600",
+            )}
           >
-            {stats.increased ? <TrendingUp/> : <TrendingDown/>}
-            {stats.change.toFixed(4)} {" "} 
-            ({stats.percentage.toFixed(2)}%) {" "}
+            {stats.increased ? <TrendingUp /> : <TrendingDown />}
+            {stats.change.toFixed(4)} ({stats.percentage.toFixed(2)}%){" "}
             <span className="text-black">{rangeLabels[range]}</span>
           </CardDescription>
           <div className="flex gap-2">
