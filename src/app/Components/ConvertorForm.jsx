@@ -114,7 +114,7 @@ border border-white/20 p-6"
             </div>
           )}
         </div>
-        {/* <Graph To={toCurrency} From={fromCurrency} /> */}
+        <Graph To={toCurrency} From={fromCurrency} />
       </div>
     </form>
   );
