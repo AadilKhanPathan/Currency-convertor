@@ -139,21 +139,24 @@ function ChartLineLinear({ From, To }) {
     getHistory();
   }, [From, To, range]);
 
-  return (
+ return (
     <Card className="w-full max-w-3xl">
       <CardHeader>
         <CardTitle>{`${From} to ${To} - Exchange Rate`}</CardTitle>
         <div className="flex justify-between">
+
+          {isLoading ? <Skeleton className="h-5 w-[250px] mt-3"></Skeleton> :
           <CardDescription
-            className={cn(
-              "flex mt-1.5 gap-1",
-              stats.increased ? "text-green-600" : "text-red-600",
-            )}
+            className={ cn( "flex mt-1.5 gap-1.5",
+              stats.increased ? "text-green-600" : "text-red-600"
+  )}
           >
-            {stats.increased ? <TrendingUp /> : <TrendingDown />}
-            {stats.change.toFixed(4)} ({stats.percentage.toFixed(2)}%){" "}
+            {stats.increased ? <TrendingUp/> : <TrendingDown/>}
+            {stats.change.toFixed(4)} {" "} 
+            ({stats.percentage.toFixed(2)}%) {" "}
             <span className="text-black">{rangeLabels[range]}</span>
           </CardDescription>
+}
           <div className="flex gap-2">
             <Button
               variant={range === "7d" ? "default" : "outline"}
@@ -181,7 +184,7 @@ function ChartLineLinear({ From, To }) {
       </CardHeader>
 
       {isLoading ? (
-        <Skeleton className="h-75 rounded-lg w-141"></Skeleton>
+        <Skeleton className="h-75 rounded-lg w-134 mx-3.5"></Skeleton>
       ) : (
         <CardContent>
           <ChartContainer config={chartConfig} className="h-75 w-full">
