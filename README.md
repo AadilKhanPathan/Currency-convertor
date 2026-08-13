@@ -5,13 +5,14 @@ A real-time currency converter built with **Next.js** and **shadcn/ui**, featuri
 ![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js)
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?logo=shadcnui&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 
 
 <h2>Demo</h2>
 <a href="https://currency-convertor-steel-eight.vercel.app/">
-  <img src="https://img.shields.io/badge/View%20Site-4A4A4A?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/LIVE_DEMO-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 </a>
 
 <!-- <img width="1257" height="623" alt="image" src="https://github.com/user-attachments/assets/25d40658-e652-494a-a339-1117542a5aac" /> -->
@@ -35,7 +36,7 @@ A real-time currency converter built with **Next.js** and **shadcn/ui**, featuri
 |---|---|
 | Searchable dropdown with flags | Interactive line chart with timeframe toggle |
 
-*(Add screenshots or a GIF of the app here — see `/screenshots` folder)*
+https://github.com/user-attachments/assets/a0ef26bb-7f5c-4af0-87be-a35b4f9315f7
 
 ## 🛠️ Tech Stack
 
